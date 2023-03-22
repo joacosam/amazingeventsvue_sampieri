@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://kit.fontawesome.com/790c491f2b.js" crossorigin="anonymous"></script>
+    <title>Amazing Events | Stats</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="../index.html">
+                    <img id="logo" src="../assets/img/LogoAmazingEvents.png" alt="logo">
+                </a>
+            </div>
+            <input type="checkbox">
+            <ul>
+                <li> <a href="../index.html">Home</a></li>
+                <li> <a href="../pages/upcomingevents.html"> Upcoming Events</a></li>
+                <li> <a href="../pages/pastevents.html"> Past Events</a></li>
+                <li> <a href="../pages/contacts.html"> Contacts</a></li>
+                <li> <a href="../pages/stats.html"> Stats</a></li>
+            </ul>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-regular fa-x"></i>
+        </nav>
+        <div class="slide">
+            <a href="../pages/contacts.html">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <h1>Stats</h1>
+            <a href="../index.html">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+    </header>
+    <main id="app">
+        <div class="stats">
+        <table>
+            <tbody id="table1">
+                <tr>
+                    <th colspan="3"> Events statictis </th>
+                </tr>
+                <tr>
+                    <td>Events with the highest percentage of attendance</td>
+                    <td>Events with the lowest percentage of attendance</td>
+                    <td>Events with larger capacity</td>
+                </tr>
+            </tbody>
+            <tbody id="table2">
+                <tr>
+                    <th colspan="3"> Upcoming events statistics by category </th>
+                </tr>
+                <tr>
+                    <td>Categories</td>
+                    <td>Revenues</td>
+                    <td>Percentage of attendance</td>
+                </tr>
+                <template v-for="elemento of upcoming">
+                    <tr>
+                        <td>{{ elemento.category }}</td>
+                        <td> ${{ elemento.revenue.toLocaleString() }} </td>
+                        <td>{{ (elemento.attendance*100).toFixed(2) }}%</td>
+                    </tr>
+                </template>
+            </tbody>
+            <tbody id="table3">
+                <tr>
+                    <th colspan="3"> Past events statistic by category </th>
+                </tr>
+                <tr>
+                    <td>Categories</td>
+                    <td>Revenues</td>
+                    <td>Percentage of attendance</td>
+                </tr>
+                <template v-for="elemento of past">
+                    <tr>
+                        <td>{{ elemento.category }}</td>
+                        <td> ${{ elemento.revenue.toLocaleString() }} </td>
+                        <td>{{ (elemento.attendance*100).toFixed(2) }}%</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+    </main>
+    <footer>
+        <div>
+            <div class="ancors">
+                <div class="botones">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <div class="cohort">
+                    <h2>FE06-TN</h2>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

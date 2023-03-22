@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+height: 100vh;
+}
+/* HEADER */
+
+nav {
+    /* position: sticky; */
+    top: 0;
+    background: white;
+    min-height: 10vh;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+#logo {
+        height: 3rem;
+}
+nav>input, nav>i{
+    display: none !important;
+}
+nav>ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+    nav>ul>li>a {
+        border-radius: 5px;
+        padding: 0.2em;
+        background-color: rgb(125, 29, 125);
+        text-decoration: none;
+        font-size: 1.5em;
+        color: black;
+    }
+    
+
+    .slide {display: flex;
+        justify-content: space-between;
+        height: 15vh;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        color: black;
+        background: linear-gradient(90deg, rgb(104, 4, 104), white);
+        align-items: center;
+    }
+    .slide a {
+    scale: 2;
+}
+
+    main {
+    min-height: 80vh;
+}
+
+.search {
+display: flex;
+justify-content: space-between;
+padding: 1em;
+flex-wrap: wrap;
+}
+
+.search fieldset {
+border: none;
+display: flex;
+gap: 1em;
+}
+
+.search fieldset label input {
+    margin-left: 0.3em;
+}
+
+#checkbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fcontact label {
+    background: linear-gradient(0deg, rgb(104, 4, 104), white);
+}
+
+
+.card {
+display: flex;
+justify-content: center;
+gap: 3em;
+flex-wrap: wrap;
+padding: 2rem;
+}
+
+.card1 {
+display: flex;
+gap: 4rem;
+}
+
+.card section {
+background-color: rgb(104, 4, 104);
+padding: 1em;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1em;
+width: 15em;
+}
+
+.card section img {
+max-width: 100%;
+object-fit: cover;
+height: 12em;
+}
+
+footer {
+height: 10vh;
+background: linear-gradient(0deg, rgb(104, 4, 104), white);
+}
+
+.ancors {
+display: flex;
+justify-content: space-between;
+padding: 1em;
+align-items: center;
+padding-left: 2rem;
+padding-right: 2rem;
+}
+
+.botones {
+font-size: 2rem;
+display: flex;
+gap: 1.5rem;
+}
+
+.botones a {
+color: black;
+}
+.vermas {
+cursor: pointer;
+width: 5em;
+font-size: 1em;
+padding: 0.2em;
+}
+
+.fa-solid {
+color: black;
+}
+
+.contact {
+display: flex;
+justify-content: center;
+padding: 2em;
+}
+
+.fcontact {
+border: none;
+font-size: 1.5em;
+}
+.fcontact input {
+width: 30em;
+height: 2em;
+}
+
+textarea {
+resize: none;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    }
+
+table {
+    border-spacing: 0;
+    padding: 2em;
+    }
+
+td, th {
+border: solid 1px;
+height: 2em;
+min-width: 15em;
+padding: 0.5em;
+}
+
+th {
+background: linear-gradient(90deg, rgb(104, 4, 104), white);
+}
+
+
+section h3 {
+    color: white;
+}
+
+section h5 {
+    color: white;
+}
+
+section p {
+    color: white;
+}
+
+/* card details */
+.responsiveDetails {
+    display: flex;
+    justify-content: center;
+}
+#containerDetails {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    background: linear-gradient(90deg, rgb(104, 4, 104), white);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    min-width: 100%;
+}
+
+#containerDetails > div > img {
+    object-fit: cover;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#containerDetails > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:870px) {
+    nav {
+        align-items: flex-start;
+    }
+    nav > ul {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 3em;
+    }
+    nav ul li a{
+        background-color: transparent;
+    }
+    nav input, nav i {
+        position: absolute;
+        scale: 3;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        opacity: 0;
+        display: block !important;
+    }
+    nav input {
+        z-index: 1;
+    }
+    nav > input:not(checked) + ul {
+    display: none;
+    }
+    nav > input:checked + ul {
+        display: flex;
+    }
+    nav > input:not(checked) ~ .fa-bars, nav > input:checked ~ .fa-x  {
+        opacity: 1;
+        }
+    nav > input:not(checked) ~ .fa-x, nav > input:checked ~ .fa-bars {
+            opacity: 0;
+        }
+    table{
+        padding: 0.1em;
+    }
+    td, th {
+        border: solid 1px;
+        height: 2em;
+        min-width: 0em;
+        padding: 0.1em;
+        }
+    #containerDetails {
+        flex-direction: column;
+        max-width: 30em;
+        align-items: center;
+        text-align: center;
+        width: 95vw;
+    }
+    #containerDetails > div {
+        width: 100%;
+    }
+    #containerDetails > div > img {
+        height: 20em;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    .contact {
+    scale: 0.8;
+    }
+}
